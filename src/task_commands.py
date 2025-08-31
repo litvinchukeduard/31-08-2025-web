@@ -68,6 +68,11 @@ class MarkTaskAsDoneCommand(Command):
 
 
 class ExitCommand(Command):
+    def __init__(self, save_strategy, tasks_list):
+        self.save_strategy = save_strategy
+        self.tasks_list = tasks_list
+
     def execute(self):
         print("Goodbye!")
+        self.save_strategy.save(self.tasks_list)
         exit()

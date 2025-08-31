@@ -1,0 +1,30 @@
+INFO:__main__:number_one is set to 1
+INFO:__main__:number_two is set to 0
+DEBUG:__main__:Trying to divide 1 by 0
+ERROR:__main__:Something happened to the division logic
+Traceback (most recent call last):
+  File "/Users/eddielitvinchuk/Documents/Repositories/31-08-2025-web/src/logger.py", line 13, in <module>
+    result = number_one / number_two
+             ~~~~~~~~~~~^~~~~~~~~~~~
+ZeroDivisionError: division by zero
+ERROR:__main__:division by zero
+Traceback (most recent call last):
+  File "/Users/eddielitvinchuk/Documents/Repositories/31-08-2025-web/src/logger.py", line 13, in <module>
+    result = number_one / number_two
+             ~~~~~~~~~~~^~~~~~~~~~~~
+ZeroDivisionError: division by zero
+INFO:__main__:number_one is set to 1
+INFO:__main__:number_two is set to 0
+DEBUG:__main__:Trying to divide 1 by 0
+ERROR:__main__:Something happened to the division logic
+Traceback (most recent call last):
+  File "/Users/eddielitvinchuk/Documents/Repositories/31-08-2025-web/src/logger.py", line 13, in <module>
+    result = number_one / number_two
+             ~~~~~~~~~~~^~~~~~~~~~~~
+ZeroDivisionError: division by zero
+ERROR:__main__:division by zero
+Traceback (most recent call last):
+  File "/Users/eddielitvinchuk/Documents/Repositories/31-08-2025-web/src/logger.py", line 13, in <module>
+    result = number_one / number_two
+             ~~~~~~~~~~~^~~~~~~~~~~~
+ZeroDivisionError: division by zero

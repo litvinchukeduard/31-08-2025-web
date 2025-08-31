@@ -5,11 +5,25 @@ from src.task_commands import (
     MarkTaskAsDoneCommand,
 )
 
+from src.save_strategies import JsonSaveStrategy
+
 
 def main():
-    print("Welcome to task manage!")
+    print("Welcome to task manager!")
+    save_strategy_name = input("Please choose file format (json/csv/pkl): ")
+    match save_strategy_name:
+        case "json":
+            save_strategy = JsonSaveStrategy()
+        case "csv":
+            # save_strategy = CsvSaveStrategy()
+            ...
+            return
+        case "pkl":
+            # save_strategy = PickleSaveStrategy()
+            ...
+            return
 
-    task_list = []
+    task_list = save_strategy.load()
 
     actions_dict = {
         "add": lambda: AddTaskCommand(
@@ -19,7 +33,7 @@ def main():
         "done": lambda: MarkTaskAsDoneCommand(
             int(input("Enter task id: ")), task_list
         ).execute(),
-        "exit": lambda: ExitCommand().execute(),
+        "exit": lambda: ExitCommand(save_strategy, task_list).execute(),
     }
 
     while True:
