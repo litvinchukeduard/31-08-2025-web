@@ -1,4 +1,6 @@
 from abc import ABC, abstractmethod
+# from dataclasses import dataclass
+from sys import exit
 
 from src.task_entity import Task
 
@@ -32,3 +34,10 @@ class AddTaskCommand(Command):
         current_id += 1
         new_task = Task(current_id, self.description, False)
         self.task_list.append(new_task)
+
+
+
+class ExitCommand(Command):
+    def execute(self):
+        print("Goodbye!")
+        exit()
