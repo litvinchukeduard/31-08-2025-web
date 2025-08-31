@@ -6,10 +6,13 @@ from src.task_commands import (
 )
 
 from src.save_strategies import JsonSaveStrategy
+from src.logger import Logger
 
 
 def main():
+    logger = Logger()
     print("Welcome to task manager!")
+    logger.log.info("Starting application")
     save_strategy_name = input("Please choose file format (json/csv/pkl): ")
     match save_strategy_name:
         case "json":
@@ -23,6 +26,7 @@ def main():
             ...
             return
 
+    logger.log.debug(f"Loading files from file. Strategy: {save_strategy_name}")
     task_list = save_strategy.load()
 
     actions_dict = {

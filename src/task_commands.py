@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from sys import exit
 
 from src.task_entity import Task
+from src.logger import Logger
 
 
 current_id = 0
@@ -30,9 +31,11 @@ class AddTaskCommand(Command):
         self.task_list = task_list
 
     def execute(self):
+        logger = Logger()
         global current_id
         current_id += 1
         new_task = Task(current_id, self.description, False)
+        logger.log.info("Adding new task")
         self.task_list.append(new_task)
 
 
